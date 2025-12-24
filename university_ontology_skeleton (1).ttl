@@ -1,0 +1,252 @@
+@prefix ex: <http://example.org/university/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Debtor a owl:Class ;
+    rdfs:label "Debtor" ;
+    rdfs:subClassOf ex:Student .
+
+ex:Dropout a owl:Class ;
+    rdfs:label "Dropout" ;
+    rdfs:subClassOf ex:AcademicOutcome .
+
+ex:Enrolled a owl:Class ;
+    rdfs:label "Enrolled" ;
+    rdfs:subClassOf ex:AcademicOutcome .
+
+ex:Father a owl:Class ;
+    rdfs:label "Father" ;
+    rdfs:subClassOf ex:Parent .
+
+ex:Graduate a owl:Class ;
+    rdfs:label "Graduate" ;
+    rdfs:subClassOf ex:AcademicOutcome .
+
+ex:Guardian a owl:Class ;
+    rdfs:label "Guardian" ;
+    rdfs:subClassOf ex:Person .
+
+ex:MaritalStatus a owl:Class ;
+    rdfs:label "MaritalStatus" ;
+    rdfs:subClassOf ex:SocioEconomicFactor .
+
+ex:Mother a owl:Class ;
+    rdfs:label "Mother" ;
+    rdfs:subClassOf ex:Parent .
+
+ex:Occupation a owl:Class ;
+    rdfs:label "Occupation" ;
+    rdfs:subClassOf ex:SocioEconomicFactor .
+
+ex:ScholarshipHolder a owl:Class ;
+    rdfs:label "ScholarshipHolder" ;
+    rdfs:subClassOf ex:Student .
+
+ex:Semester1Unit a owl:Class ;
+    rdfs:label "Semester1Unit" ;
+    rdfs:subClassOf ex:CurricularUnit .
+
+ex:Semester2Unit a owl:Class ;
+    rdfs:label "Semester2Unit" ;
+    rdfs:subClassOf ex:CurricularUnit .
+
+ex:admissionGrade a owl:DatatypeProperty ;
+    rdfs:label "admissionGrade" ;
+    rdfs:range xsd:float .
+
+ex:ageAtEnrollment a owl:DatatypeProperty ;
+    rdfs:label "ageAtEnrollment" ;
+    rdfs:range xsd:integer .
+
+ex:applicationOrder a owl:DatatypeProperty ;
+    rdfs:label "applicationOrder" ;
+    rdfs:range xsd:integer .
+
+ex:appliedVia a owl:ObjectProperty ;
+    rdfs:label "appliedVia" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:ApplicationMode .
+
+ex:attendanceType a owl:DatatypeProperty ;
+    rdfs:label "attendanceType" ;
+    rdfs:range xsd:string .
+
+ex:curUnits1stSemApproved a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemApproved" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits1stSemCredited a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemCredited" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits1stSemEnrolled a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemEnrolled" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits1stSemEvaluations a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemEvaluations" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits1stSemGrade a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemGrade" ;
+    rdfs:range xsd:float .
+
+ex:curUnits1stSemWithoutEvals a owl:DatatypeProperty ;
+    rdfs:label "curUnits1stSemWithoutEvals" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits2ndSemApproved a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemApproved" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits2ndSemCredited a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemCredited" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits2ndSemEnrolled a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemEnrolled" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits2ndSemEvaluations a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemEvaluations" ;
+    rdfs:range xsd:integer .
+
+ex:curUnits2ndSemGrade a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemGrade" ;
+    rdfs:range xsd:float .
+
+ex:curUnits2ndSemWithoutEvals a owl:DatatypeProperty ;
+    rdfs:label "curUnits2ndSemWithoutEvals" ;
+    rdfs:range xsd:integer .
+
+ex:enrolledIn a owl:ObjectProperty ;
+    rdfs:label "enrolledIn" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Course .
+
+ex:gdpValue a owl:DatatypeProperty ;
+    rdfs:label "gdpValue" ;
+    rdfs:range xsd:float .
+
+ex:gender a owl:DatatypeProperty ;
+    rdfs:label "gender" ;
+    rdfs:range xsd:string .
+
+ex:hasEconomicContext a owl:ObjectProperty ;
+    rdfs:label "hasEconomicContext" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:InflationRate .
+
+ex:hasNationality a owl:ObjectProperty ;
+    rdfs:label "hasNationality" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:MacroIndicator .
+
+ex:hasOutcome a owl:ObjectProperty ;
+    rdfs:label "hasOutcome" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:AcademicOutcome .
+
+ex:hasParent a owl:ObjectProperty ;
+    rdfs:label "hasParent" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Parent .
+
+ex:hasQualification a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasQualification" ;
+    rdfs:domain ex:Student ;
+    rdfs:range ex:Qualification,
+        xsd:integer .
+
+ex:hasScholarship a owl:DatatypeProperty ;
+    rdfs:label "hasScholarship" ;
+    rdfs:range xsd:boolean .
+
+ex:hasSpecialNeeds a owl:DatatypeProperty ;
+    rdfs:label "hasSpecialNeeds" ;
+    rdfs:range xsd:boolean .
+
+ex:includesUnit a owl:ObjectProperty ;
+    rdfs:label "includesUnit" ;
+    rdfs:domain ex:Course ;
+    rdfs:range ex:CurricularUnit .
+
+ex:inflationRateValue a owl:DatatypeProperty ;
+    rdfs:label "inflationRateValue" ;
+    rdfs:range xsd:float .
+
+ex:isDebtor a owl:DatatypeProperty ;
+    rdfs:label "isDebtor" ;
+    rdfs:range xsd:boolean .
+
+ex:isDisplaced a owl:DatatypeProperty ;
+    rdfs:label "isDisplaced" ;
+    rdfs:range xsd:boolean .
+
+ex:isInternational a owl:DatatypeProperty ;
+    rdfs:label "isInternational" ;
+    rdfs:range xsd:boolean .
+
+ex:previousQualificationGrade a owl:DatatypeProperty ;
+    rdfs:label "previousQualificationGrade" ;
+    rdfs:range xsd:float .
+
+ex:tuitionFeesUpToDate a owl:DatatypeProperty ;
+    rdfs:label "tuitionFeesUpToDate" ;
+    rdfs:range xsd:boolean .
+
+ex:unemploymentRate a owl:DatatypeProperty ;
+    rdfs:label "unemploymentRate" ;
+    rdfs:range xsd:float .
+
+ex:ApplicationMode a owl:Class ;
+    rdfs:label "ApplicationMode" ;
+    rdfs:subClassOf ex:SocioEconomicFactor .
+
+ex:InflationRate a owl:Class ;
+    rdfs:label "InflationRate" ;
+    rdfs:subClassOf ex:MacroIndicator .
+
+ex:Qualification a owl:Class ;
+    rdfs:label "Qualification" ;
+    rdfs:subClassOf ex:AcademicEntity .
+
+foaf:Person a owl:Class ;
+    rdfs:label "Person" .
+
+ex:Course a owl:Class ;
+    rdfs:label "Course" ;
+    rdfs:subClassOf ex:AcademicEntity .
+
+ex:MacroIndicator a owl:Class ;
+    rdfs:label "MacroIndicator" ;
+    rdfs:subClassOf ex:SocioEconomicFactor .
+
+ex:AcademicEntity a owl:Class ;
+    rdfs:label "AcademicEntity" .
+
+ex:CurricularUnit a owl:Class ;
+    rdfs:label "CurricularUnit" ;
+    rdfs:subClassOf ex:AcademicEntity .
+
+ex:Parent a owl:Class ;
+    rdfs:label "Parent" ;
+    rdfs:subClassOf ex:Person .
+
+ex:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf foaf:Person .
+
+ex:AcademicOutcome a owl:Class ;
+    rdfs:label "AcademicOutcome" .
+
+ex:SocioEconomicFactor a owl:Class ;
+    rdfs:label "SocioEconomicFactor" .
+
+ex:Student a owl:Class ;
+    rdfs:label "Student" ;
+    rdfs:subClassOf ex:Person .
+
